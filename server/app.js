@@ -19,8 +19,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/users', usersRouter);
-app.use('/posts', postsRouter);
+app.use('/api', usersRouter);
+app.use('/api/posts', postsRouter);
 
 app.get('/', (req, res) => {
   res.send('API is running');
