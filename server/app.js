@@ -18,7 +18,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', usersRouter);
+app.use('/auth', usersRouter);
 app.use('/posts', postsRouter);
 
 app.get('/', (req, res) => {
