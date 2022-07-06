@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require('path');
 const logger = require('morgan');
 require('dotenv').config();
 
@@ -19,8 +18,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api', usersRouter);
-app.use('/api/posts', postsRouter);
+app.use('/', usersRouter);
+app.use('/posts', postsRouter);
 
 app.get('/', (req, res) => {
   res.send('API is running');
